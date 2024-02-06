@@ -9,10 +9,9 @@ image:
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "28-custom-20240202-083937"
-  pullSecrets:
-      - name: jfrog-secret
+  
 
-imagePullSecrets: []
+imagePullSecrets: jfrogpwdsecret
 nameOverride: ""
 fullnameOverride: ""
 
