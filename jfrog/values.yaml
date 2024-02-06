@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: demorepo/netflix
+  repository: https://sanjay4051.jfrog.io/artifactory/demorepo/netflix/
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "28-custom-20240202-083937"
