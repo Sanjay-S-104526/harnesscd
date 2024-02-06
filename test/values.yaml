@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: sanjay4051/netflix
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "3"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -40,8 +40,9 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: ClusterIP
+  type: NodePort
   port: 80
+  targetPort: 8009
 
 ingress:
   enabled: false
@@ -71,14 +72,14 @@ resources: {}
   #   cpu: 100m
   #   memory: 128Mi
 
-livenessProbe:
-  httpGet:
-    path: /
-    port: http
-readinessProbe:
-  httpGet:
-    path: /
-    port: http
+#livenessProbe:
+ # httpGet:
+  #  path: /
+   # port: http
+#readinessProbe:
+ # httpGet:
+  #  path: /
+   # port: http
 
 autoscaling:
   enabled: false
