@@ -11,8 +11,7 @@ image:
   tag: "28-custom-20240202-083937"
   
 
-imagePullSecrets:
-        - name: jfrogpwdsecret
+imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
