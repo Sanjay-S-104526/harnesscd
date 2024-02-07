@@ -12,7 +12,7 @@ image:
   
 
 imagePullSecrets: 
-     - name: jfrog-secret-1
+     - name: jfrog-secret-2
 nameOverride: ""
 fullnameOverride: ""
 
