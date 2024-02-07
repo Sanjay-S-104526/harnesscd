@@ -8,7 +8,7 @@ image:
   repository: sanjay4051.jfrog.io/demorepo/netflix
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "28-custom-20240202-083937"
+  tag: "30-custom-20240207-043449"
   
 
 imagePullSecrets: 
