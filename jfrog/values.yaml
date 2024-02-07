@@ -11,7 +11,8 @@ image:
   tag: "28-custom-20240202-083937"
   
 
-imagePullSecrets: []
+imagePullSecrets: 
+     - name: jfrog-secret-1
 nameOverride: ""
 fullnameOverride: ""
 
