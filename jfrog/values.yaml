@@ -9,7 +9,7 @@ image:
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
 #  tag: "41-fis-08022024-175"
-   tag: "<+artifact.tag>"
+  tag: "<+artifact.tag>"
   
 
 imagePullSecrets: 
