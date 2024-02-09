@@ -1,0 +1,20 @@
+inputSet:
+  name: trigger-input-set
+  identifier: triggerinputset
+  orgIdentifier: default
+  projectIdentifier: cd
+  pipeline:
+    identifier: cdjfrog_Clone
+    stages:
+      - stage:
+          identifier: cdjfrog
+          type: Deployment
+          spec:
+            service:
+              serviceInputs:
+                serviceDefinition:
+                  type: NativeHelm
+                  spec:
+                    artifacts:
+                      primary:
+                        primaryArtifactRef: jfrog1
