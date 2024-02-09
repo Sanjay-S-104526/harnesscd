@@ -1,53 +1,52 @@
----
 pipeline:
-  projectIdentifier: "cd"
-  orgIdentifier: "default"
+  projectIdentifier: cd
+  orgIdentifier: default
   tags: {}
   stages:
-  - stage:
-      name: "cd-jfrog"
-      identifier: "cdjfrog"
-      description: ""
-      type: "Deployment"
-      spec:
-        deploymentType: "NativeHelm"
-        service:
-          serviceRef: "cdjfrogsvc"
-          serviceInputs:
-            serviceDefinition:
-              type: "NativeHelm"
-              spec:
-                artifacts:
-                  primary:
-                    primaryArtifactRef: "<+input>"
-                    sources: "<+input>"
-        environment:
-          environmentRef: "dev"
-          deployToAll: false
-          infrastructureDefinitions:
-          - identifier: "k8s"
-        execution:
-          steps:
-          - step:
-              name: "Helm Deployment"
-              identifier: "helmDeployment"
-              type: "HelmDeploy"
-              timeout: "10m"
-              spec:
-                skipDryRun: false
-          rollbackSteps:
-          - step:
-              name: "Helm Rollback"
-              identifier: "helmRollback"
-              type: "HelmRollback"
-              timeout: "10m"
-              spec: {}
-      tags: {}
-      failureStrategies:
-      - onFailure:
-          errors:
-          - "AllErrors"
-          action:
-            type: "StageRollback"
-  identifier: "cdjfrog_Clone"
-  name: "cd-jfrog - Clone"
+    - stage:
+        name: cd-jfrog
+        identifier: cdjfrog
+        description: ""
+        type: Deployment
+        spec:
+          deploymentType: NativeHelm
+          service:
+            serviceRef: cdjfrogsvc
+            serviceInputs:
+              serviceDefinition:
+                type: NativeHelm
+                spec:
+                  artifacts:
+                    primary:
+                      primaryArtifactRef: <+input>
+                      sources: <+input>
+          environment:
+            environmentRef: dev
+            deployToAll: false
+            infrastructureDefinitions:
+              - identifier: k8s
+          execution:
+            steps:
+              - step:
+                  name: Helm Deployment
+                  identifier: helmDeployment
+                  type: HelmDeploy
+                  timeout: 10m
+                  spec:
+                    skipDryRun: false
+            rollbackSteps:
+              - step:
+                  name: Helm Rollback
+                  identifier: helmRollback
+                  type: HelmRollback
+                  timeout: 10m
+                  spec: {}
+        tags: {}
+        failureStrategies:
+          - onFailure:
+              errors:
+                - AllErrors
+              action:
+                type: StageRollback
+  identifier: cdjfrog_Clone
+  name: regex-demo
