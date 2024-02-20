@@ -1,0 +1,13 @@
+template:
+  name: helm-template-1
+  type: Step
+  projectIdentifier: cd
+  orgIdentifier: default
+  spec:
+    type: HelmDeploy
+    timeout: 10m
+    spec:
+      skipDryRun: false
+      ignoreReleaseHistFailStatus: false
+  identifier: helmtemplate1
+  versionLabel: "1"
