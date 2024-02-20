@@ -30,10 +30,10 @@ pipeline:
               - step:
                   name: Helm Deployment
                   identifier: helmDeployment
-                  type: HelmDeploy
-                  timeout: 10m
-                  spec:
-                    skipDryRun: false
+                  template:
+                    templateRef: helmtemplate1
+                    versionLabel: "1"
+                    gitBranch: main
             rollbackSteps:
               - step:
                   name: Helm Rollback
